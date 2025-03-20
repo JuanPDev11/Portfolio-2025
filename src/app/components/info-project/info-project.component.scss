@@ -1,0 +1,153 @@
+
+@import "../../../styles.scss";
+
+.info {
+    position: absolute;
+    width: 95%;
+    background: $primary-color;
+    padding: 40px;
+    padding-top: 10px;
+    border: 2px solid $icon-color;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px $shadow-color;
+    color: $text-color;
+    max-height: 93vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    @include smartphone(700px){
+        padding: 0;
+        width: 100%;
+    }
+
+    &--title {
+        width: max-content;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        @include smartphone(700px){
+            font-size: 1.25rem;
+            margin-left: 5%;
+            margin-top: 7%;
+            max-width: 76%;
+            text-align: left;
+        }
+
+        &:hover{
+            transform: translateY(-5px); /* Desplaza la tarjeta hacia arriba */
+        }              
+        i {
+            color: $icon-color;
+            margin-right: 10px;
+        }
+    }
+
+    &--content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px; // Adds space between sections
+
+        &-section {
+            flex: 1;
+            min-width: 45%;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+
+            &-title {
+                font-size: 22px;
+                margin-bottom: 15px;
+                color: $icon-color;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                &:hover{
+                    transform: translateY(-5px); /* Desplaza la tarjeta hacia arriba */
+                }
+                    
+                    
+                i {
+                    margin-right: 8px;
+                }
+            }
+
+            &-skill {
+                &-list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+
+                &-item {
+                    background: $secondary-color;
+                    padding: 12px 15px;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    box-shadow: 0 2px 5px $shadow-color;
+                    line-height: 1.5;
+                    word-spacing: 2px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+
+                    @include smartphone(700px){
+                        font-size: 12.5px;
+                    }
+
+                    &:hover{
+                        transform: translateY(-5px); /* Desplaza la tarjeta hacia arriba */
+                    }
+
+                    i {
+                        color: $icon-color;
+                        margin-right: 12px;
+                        font-size: 20px;
+                        flex-shrink: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                        color: $text-color;
+                    }
+
+                    strong {
+                        color: $text-color;
+                        margin-left: 5px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.close{
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+    top: 15px;
+    right: 30px;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .project-description {
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+
+        .section {
+            min-width: 100%;
+        }
+    }
+}

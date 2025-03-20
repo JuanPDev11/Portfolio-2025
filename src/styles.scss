@@ -1,1 +1,203 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$PortfolioNew-primary: mat.define-palette(mat.$indigo-palette);
+$PortfolioNew-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$PortfolioNew-warn: mat.define-palette(mat.$red-palette);
+
+@font-face {
+  font-family: 'Alfa Slab One';
+  src: url('./assets/fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+
+}
+$PortfolioNew-typography: mat.define-typography-config(( font-family: 'Alfa Slab One, sans-serif', ));
+
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$PortfolioNew-theme: mat.define-light-theme((
+  color: (
+    primary: $PortfolioNew-primary,
+    accent: $PortfolioNew-accent,
+    warn: $PortfolioNew-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($PortfolioNew-theme);
+//Bootstrap Icons
+/* Personalizar la barra de desplazamiento en navegadores basados en WebKit (Chrome, Edge, Safari) */
+/* Personalizar la barra de desplazamiento en navegadores basados en WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra */
+}
+
+/* Fondo negro en la barra */
+::-webkit-scrollbar-track {
+  background: #000000; /* Negro */
+  border-radius: 10px;
+}
+
+/* Color blanco en la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #ffffff; /* Blanco */
+  border-radius: 10px;
+}
+
+/* Cambiar color cuando el usuario pasa el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc; /* Un tono más suave de blanco */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #000000; /* Blanco y Negro */
+}
+
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
 /* You can add global styles to this file, and also import other style files */
+
+.swiper {
+  position: fixed !important; /* o absolute dependiendo de tu layout */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1; /* Asegúrate que sea menor que el z-index del modal */
+}
+
+/* Asegúrate que el modal tenga mayor z-index */
+.cdk-overlay-container {
+  z-index: 1000;
+}
+
+$primary-color: #000000; // Black background
+$secondary-color: #1a1a1a; // Dark gray for contrast
+$text-color: #ffffff; // White text for readability
+$icon-color: #8e44ad; // Purple icons
+$shadow-color: rgba(255, 255, 255, 0.1);
+
+@mixin smartphone ($size){
+  @media screen and (max-width: $size) {
+      @content;
+  }
+
+}
+
+@mixin responsive($size1, $size2){
+  @media screen and (min-width: $size1) and (max-width: $size2){
+      @content;
+  }
+
+}
+html, body { height: 100%; }
+body { 
+  margin: 0; font-family: 'Alfa Slab One'; 
+
+}
+
+html {
+  background-image:url('/assets/images/BannerLucumi.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+ 
+}
+
+/* Contenedor principal */
+.slider-container {
+  
+}
+
+/* Contenedor que agrupa las secciones */
+.router-container {
+  
+}
+
+/* Cada hijo del contenedor ocupa el 100% del viewport */
+.router-container > div {
+  
+}
+
+.ruido{
+  background-image:url('/assets/images/ruido.png');
+  height: 100vh;
+  width: 100%;
+}
+
+.ruido-black{
+  background-image:url('/assets/images/BannerSkills.svg');
+  height: 100vh;
+}
+.owl-dots{
+  position: absolute;
+  bottom: 7%;
+}
+
+.owl-nav{
+  position: absolute;
+  bottom: 10%;
+}
+
+.test{
+  background-image: url("/src/assets/images/c-.svg");
+}
+
+.mySwiper{
+  height: 100vh;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+//parallax
+.swiper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+.home{
+  width: 100%;
+}
+
+.mat-mdc-dialog-surface.mdc-dialog__surface {
+  overflow-x: hidden;
+}

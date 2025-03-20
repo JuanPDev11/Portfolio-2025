@@ -1,0 +1,121 @@
+<div class="info">
+    <i (click)="close()" class="close bi bi-x-square"></i>
+    <h2 class="info--title"><i class="bi bi-envelope"></i> <strong>PQR Management System</strong></h2>
+  
+    <div class="info--content">
+        <!-- Back-End -->
+        <div class="info--content-section">
+            <h3 class="info--content-section-title"><i class="bi bi-server"></i> <strong>Back-End</strong></h3>
+            <div class="info--content-section-skill-list">
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-database"></i>
+                    <p>Built with<strong> C# and ASP.NET Core 8</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-shield-lock"></i>
+                    <p>Security with<strong> JWT</strong> and <strong>OAuth2</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-diagram-3"></i>
+                    <p>Workflow for<strong> PQR approval and response</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-envelope-open"></i>
+                    <p>Integration with<strong> Outlook</strong> to extract emails and attachments</p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    <p>Automatic<strong> PDF document generation</strong> based on responses</p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-pencil-square"></i>
+                    <p><strong>Electronic signature management</strong> for outgoing emails</p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-people"></i>
+                    <p>Authentication with<strong> LDAP and Active Directory</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-list-task"></i>
+                    <p><strong>CRUD</strong> for PQRs and issue types</p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-envelope-paper"></i>
+                    <p>Management of<strong> email senders and configurations</strong></p>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Front-End -->
+        <div class="info--content-section">
+            <h3 class="info--content-section-title"><i class="bi bi-window-sidebar"></i> <strong>Front-End</strong></h3>
+            <div class="info--content-section-skill-list">
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-display"></i>
+                    <p>Built with<strong> Angular</strong> and styled with <strong>SCSS</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-lock"></i>
+                    <p>Authentication with<strong> JWT</strong> and route protection</p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-chat-dots"></i>
+                    <p>Real-time communication with<strong> SignalR</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-person-check"></i>
+                    <p>Role management with<strong> Guards and Interceptors</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-ui-checks"></i>
+                    <p>Visual workflow and<strong> real-time tracking</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-envelope-check"></i>
+                    <p>Optimized interface for<strong> PQR response and management</strong></p>
+                </div>
+                <div class="info--content-section-skill-item">
+                    <i class="bi bi-speedometer2"></i>
+                    <p>Performance optimization with<strong> Lazy Loading</strong> and <strong>RxJS</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info--description">
+      <h3><i class="bi bi-info-circle"></i> <strong> System Overview</strong></h3>
+      <p class="Lato">
+          The <strong>PQR Management System</strong> is designed to streamline and automate the request handling process within an organization.
+          The backend, developed with <strong>C# and ASP.NET Core 8</strong>, uses <strong>JWT</strong> and <strong>OAuth2</strong> for authentication and integrates <strong>SignalR</strong> for real-time updates across multiple user roles.
+          <i class="bi bi-arrow-right-circle"></i>
+      </p>
+      <p class="Lato">
+          The workflow begins with the <strong>analyst</strong>, who registers the PQR. The request then moves to the <strong>coordinator</strong>, who forwards it to the <strong>approver</strong>.
+          Once approved, a <strong>response email</strong> is sent to the original sender. The system automatically extracts emails and attachments from <strong>Outlook</strong> when a PQR is created.
+          <i class="bi bi-envelope-open"></i>
+      </p>
+      <p class="Lato">
+          During the response phase, the system provides <strong>document viewers</strong> to display email content and attachments. The response is drafted by the analyst, and a formal letter in <strong>PDF format</strong> is generated following the company's official template.
+          This letter is then sent back to the original sender.
+          <i class="bi bi-file-earmark-pdf"></i>
+      </p>
+      <p class="Lato">
+          The backend includes <strong>electronic signature management</strong>, allowing users to add digital signatures to outgoing emails. It also supports <strong>LDAP authentication</strong> with Active Directory and an alternative local authentication method using <strong>Identity</strong>.
+          <i class="bi bi-pencil-square"></i>
+      </p>
+      <p class="Lato">
+          Additional functionalities include the <strong>CRUD system</strong> for managing PQR types, primary and secondary issues, and email senders. The system supports <strong>three different workflows</strong>:
+          <i class="bi bi-cogs"></i>
+      </p>
+      <div>
+          <h2 class="Lato"><i class="bi bi-arrow-right-circle"></i> <strong>General Workflow:</strong> Analyst → Coordinator → Director (Approval) → Email Response <i class="bi bi-arrow-right"></i></h2>
+          <h2 class="Lato"><i class="bi bi-arrow-right-circle"></i> <strong>Executive Workflow:</strong> Analyst → Coordinator → HR Director → Audit Director → Final Approval <i class="bi bi-arrow-right"></i></h2>
+          <h2 class="Lato"><i class="bi bi-arrow-right-circle"></i> <strong>Simple Workflow:</strong> Analyst → Coordinator (Approval) → Email Response <i class="bi bi-arrow-right"></i></h2>
+      </div>
+      <p class="Lato">
+          The front-end is built with <strong>Angular</strong>, implementing <strong>Guards</strong>, <strong>Interceptors</strong>, and role-based access management.
+          It ensures a smooth user experience by utilizing real-time updates via <strong>SignalR</strong> and performance optimizations with <strong>Lazy Loading</strong> and <strong>RxJS</strong>.
+          <i class="bi bi-display"></i>
+      </p>
+  </div>
+  </div>
+  

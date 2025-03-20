@@ -1,0 +1,850 @@
+@import "../../../styles.scss";
+.home{
+
+    &--container{
+        height: 100vh;
+        background-image: url('../../../assets/images/BannerHome.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: 50%;
+
+        @include smartphone(700px){
+          background-image:url('/assets/images/mobileBanner.png');
+        
+        }
+
+        @include responsive(700px,1920px){
+        background-image: url('../../../assets/images/BannerHome.png');
+        background-position-x: 100%;
+        
+        
+        }
+        &-text-animated{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+
+            &-h3{
+                animation: animacion 3.5s steps(35), transparent .5s step-end infinite alternate;
+                width: 12.1em;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 30px;
+                font-weight: 300;
+                color: rgb(255, 255, 255);
+                border-right: 3px solid;
+                background: url('../../../assets/images/ruido.png');
+                background-size: cover;
+                -webkit-background-clip: text;
+                color: transparent;
+                margin: 26% 0 0 23px;
+
+                @include smartphone(700px){
+                  margin: 0;
+                  font-size: 20px;
+                  
+                  
+                }
+            }
+        }
+    }
+}
+
+@keyframes animacion {
+    from{
+        width: 0px;
+    }
+}
+
+@keyframes transparent {
+    50%{
+        border-color: white;
+    }
+}
+
+.glowMe,
+.glowAll {
+  opacity: 0;
+  transition: opacity 300ms linear 0s;
+}
+
+.button-container{
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+  z-index: 10;
+
+  @include smartphone(700px){
+    width: 100%;
+    right: auto;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+}
+
+
+.button-container svg {
+  width: 125px;
+  height: fit-content;
+  cursor: pointer;
+  pointer-events: all;
+  @include smartphone(700px){
+    width: 100px;
+  }
+}
+
+.button-container svg:hover .glowMe {
+  opacity: 0.5;
+}
+
+.button-container svg:hover .glowAll {
+  opacity: 1;
+}
+
+.button-container .buttonTop {
+  fill: #808080; /* Gris medio */
+  transition: fill 300ms linear 0s;
+}
+
+.button-container svg:hover .buttonTop {
+  fill: #b0b0b0; /* Gris más claro */
+}
+
+.button-container .buttonSides {
+  fill: #696969; /* Gris oscuro */
+  transition: fill 300ms linear 0s;
+}
+
+.button-container svg:hover .buttonSides {
+  fill: #a9a9a9; /* Gris medio-claro */
+}
+
+.button-container svg:focus {
+  outline: none;
+}
+
+.button-container svg:focus .buttonTop,
+.button-container svg:focus .playSides {
+  stroke: #d3d3d3; /* Gris claro */
+  stroke-width: 2px;
+}
+
+.button-container svg .buttonTop,
+.button-container svg .playSides {
+  stroke: #d3d3d3; /* Gris claro */
+  stroke-width: 2px;
+}
+
+.button-container svg:focus .playSides {
+  stroke-width: 1px;
+}
+
+.button-container svg:active .buttonTop {
+  fill: #c0c0c0; /* Gris claro */
+}
+
+.button-container svg .buttonTop {
+  fill: #c0c0c0; /* Gris claro */
+}
+
+.button-container svg .buttonTop {
+  fill: #c0c0c0; /* Gris claro */
+}
+
+.button-container svg:nth-of-type(1) {
+  transform: rotate(0%, 0%);
+}
+
+.button-container svg:nth-of-type(3) {
+  transform: rotate(-37%, 35%);
+}
+
+.rotate{
+  transform: rotate(180deg);
+  transform: rotatey(180deg);
+}
+
+
+
+
+/* From Uiverse.io by kamehame-ha */ 
+.light-button button.bt {
+  position: relative;
+  max-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include smartphone(700px){
+    max-width: 75px;
+    max-height: 75px;
+  }
+}
+
+.light-button button.bt .button-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  background-color: #0a0a0a;
+  border-radius: 5px;
+  color: #0f0f0f;
+  font-weight: 700;
+  transition: 300ms;
+  outline: #0f0f0f 2px solid;
+  outline-offset: 20;
+
+  @include smartphone(700px){
+    height: 60px;
+
+  }
+}
+
+.light-button button.bt .button-holder svg {
+  height: 50px;
+  fill: #0f0f0f;
+  transition: 300ms;
+
+  @include smartphone(700px){
+    max-width: 60px;
+    max-height: 30px;
+  }
+}
+
+.light-button button.bt .light-holder {
+  position: absolute;
+  height: 200px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-button button.bt .light-holder .dot {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.light-button button.bt .light-holder .light {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background: transparent;
+
+}
+
+.light-button button.bt:hover .button-holder svg {
+  fill: #fff;
+}
+
+.light-button button.bt:hover .button-holder {
+  color: #fff;
+  outline: rgba(88, 101, 242, 1) 2px solid;
+  outline-offset: 2px;
+}
+
+.light-button button.bt:hover .light-holder .light {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(88, 101, 242, 1) 0%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+
+.light-button button.bt:hover .button-holder svg .angular-path{
+  &-1{
+    fill: #B3B3B3;
+  }
+  &-2{
+    fill: #A6120D;
+  }
+  &-3{
+   fill: #DD1B16; 
+  }
+  &-4{
+    fill: #F2F2F2;
+  }
+  &-5{
+    fill: #B3B3B3;
+  }
+
+}
+
+.light-button button.bt:hover .button-holder svg .csharp-path{
+  &-1{
+    fill: #a179dc;
+  }
+  &-2{
+    fill: #280068;
+  }
+  &-3{
+   fill: #390091; 
+  }
+  &-4{
+    fill: #fff;
+  }
+  
+}
+
+.light-button button.bt:hover .button-holder svg .net-path{
+  &-1{
+    fill: #621ee5;
+  }
+}
+
+.light-button button.bt:hover .button-holder svg .react-path{
+  &-1{
+    fill: #61dafb;
+  }
+}
+
+.light-button button.bt:hover .button-holder svg .docker-path{
+  &-2{
+    fill: #22A0C8;
+  }
+  &-3{
+   fill: #37B1D9; 
+  }
+  &-4{
+    fill: #1B81A5;
+  }
+  &-5{
+    fill: #1D91B4;
+  }
+  &-6{
+    fill: #23A3C2;
+  }
+  &-7{
+   fill: #34BBDE; 
+  }
+  &-8{
+    fill: #23A3C2;
+  }
+  &-9{
+    fill: #34BBDE;
+  }
+  &-10{
+    fill: #23A3C2;
+  }
+  &-11{
+   fill: #34BBDE; 
+  }
+  &-12{
+    fill: #23A3C2;
+  }
+  &-13{
+    fill: #D3ECEC;
+  }
+  &-14{
+    fill: #364548;
+  }
+  &-15{
+   fill: #BDD9D7; 
+  }
+  &-16{
+    fill: #D3ECEC;
+  }
+  
+}
+
+.light-button button.bt:hover .button-holder svg .jwt-path{
+  &-1{
+    fill: #000;
+  }
+  &-2{
+    fill: #00f2e6;
+  }
+  &-3{
+   fill: #00b9f1; 
+  }
+  &-4{
+    fill: #d63aff;
+  }
+  &-5{
+    fill: #fb015b;
+  }
+  &-6{
+    fill: #000;
+  }
+}
+
+.light-button button.bt:hover .button-holder svg .bot-path{
+  &-1{
+    fill: #563D7C ;
+  }
+  &-2{
+    fill: #fff;
+  }
+  
+}
+
+.light-button button.bt:hover .button-holder svg .git-path{
+  &-1{
+    fill: #DE4C36 ;
+  }
+  
+  
+}
+
+.light-button button.bt:hover .button-holder svg .github-path{
+  &-1{
+    fill: #FFF ;
+  }
+  
+  
+}
+
+.light-button button.bt:hover .button-holder svg .js-path{
+  &-1{
+    // fill: #FFF ;
+  }
+  &-2{
+    fill: #e9ca32;
+  }
+  &-3{
+   fill: #ffde25; 
+  }
+  &-4{
+    fill: #fff;
+  }
+  
+}
+
+.light-button button.bt:hover .button-holder svg .pg-path{
+  &-1{
+    fill: #336791 ;
+  }
+  &-2{
+    fill: #fff;
+  }
+  &-3{
+   fill: #fff; 
+  }
+  
+  
+}
+
+.light-button button.bt:hover .button-holder svg .py-path{
+  &-1{
+    stop-color: #327EBD ;
+  }
+  &-2{
+    stop-color: #1565A7;
+  }
+  &-3{
+    stop-color: #FFDA4B; 
+   }
+   &-4{
+    stop-color: #F9C600;
+   }
+  
+  
+}
+
+.light-button button.bt:hover .button-holder svg .sass-path{
+  &-1{
+    fill: #CF649A ;
+  }
+  
+  
+}
+
+.light-button button.bt:hover .button-holder svg .sql-path{
+  &-1{
+    fill: #00bcf2 ;
+  }
+  
+  
+}
+
+.light-button button.bt:hover .button-holder svg .ninja-path{
+  &-1{
+    fill: #5e17eb ;
+  }
+  
+  
+}
+
+.skills{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+
+  @include smartphone(700px){
+    flex-direction: column;
+  
+  }
+  &-texts{
+    display: flex;
+    width: 650%;
+    @include smartphone(700px){
+      height: 40%;
+    }
+
+    &-trazo{
+      position: relative;
+
+      @include smartphone(700px){
+        width: 42%;
+        margin-left: -7%;
+      margin-top: 0%;
+      }
+    }
+
+    &-empty{
+      width: 50% !important;
+      margin-top: -18%;
+    }
+
+    &-absolute{
+      position: absolute;
+      color: #fff;
+      top: 0%;
+      text-align: left;
+      margin-left: 13%;
+      max-width: 60%;
+
+      @include smartphone(700px){
+        margin-left: 19%;
+        margin-top: -2%;
+        max-width: 43%;
+      }
+
+      img{
+        @include smartphone(700px){
+          display: none;
+        
+        }
+      }
+    }
+
+    &-img{
+      margin-top: -18%;
+      margin-left: -15%;
+      width: 116% !important;
+
+      
+    }
+
+    &-subtexts{
+      font-family: 'Lato', sans-serif;
+      font-size: 17px;
+      font-weight: bold;
+      @include smartphone(700px){
+        font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      }
+    }
+
+    &-title{
+      font-size: 150px;
+      margin-left: -30%;
+      background-image: url("/src/assets/images/ruidoBlack.webp");
+
+      @include smartphone(700px){
+        font-size: 42px;
+        margin-left: -89%;
+        margin-top: 0%;
+      }
+    }
+  }
+  &--container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 16%);
+    padding: 1% 10% 0 0;
+    @include smartphone(700px){
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0;
+      justify-items: center;
+      gap: 21px 0px;
+      margin-top: 11%;
+    }
+  }
+}
+
+.ninja-path-1 {
+  fill: black; // Color predeterminado
+  transition: fill 0.3s;
+
+  &.active {
+    // fill: #5e17eb; // Color cuando está activo
+  }
+}
+
+svg.ninja {
+  height: 79%;
+  position: absolute;
+  right: -17%;
+
+  @include smartphone(700px){
+    height: 51%;
+    width: 40%;
+    position: absolute;
+    right: -20%;
+    top: -20%;
+  
+  }
+
+  // 🦊 Estilos específicos para Firefox
+  @supports (-moz-appearance: none) {
+    right: 0;
+    @include smartphone(700px){
+      
+      right: -20%;
+      
+    
+    }
+  }
+}
+
+.angular{
+  fill: #A6120D;
+}
+
+.sql{
+  fill:#00bcf2;
+}
+
+.sass{
+  fill: #CF649A;
+}
+
+.py{
+    fill: #1565A7;
+}
+  
+.pg{
+  fill: #336791;
+}
+
+.js{
+  fill: #e9ca32;
+}
+
+.github{
+  fill: #fff;
+}
+
+.git{
+  fill: #DE4C36;
+}
+
+.bot{
+  fill: #563D7C;
+}
+
+.jwt{
+  fill: #00f2e6;
+}
+
+.docker{
+  fill: #1B81A5;
+}
+
+.react{
+  fill: #61dafb;
+}
+
+.net{
+  fill: #621ee5;
+}
+
+.csharp{
+  fill: #390091;
+}
+
+.pro{
+  background-color: #e8e8e8;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0 3%;
+
+  &--texts-container{
+    margin-bottom: 3%;
+    padding: 0px 10px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &-title{
+      font-size: 3rem;
+      width: fit-content;
+      margin-bottom: 0;
+      background: url('../../../assets/images/ruidoBlack.webp');
+      background-size: cover;
+      -webkit-background-clip: text;
+      color: transparent;
+
+      @include smartphone(700px){
+        font-size: 2rem;
+        text-align: left;
+      }
+    }
+
+    &-paragraph{
+      text-align: justify;
+      font-size: 15px;
+      font-weight: 100;
+      background: url('../../../assets/images/ruidoBlack.webp');
+      background-size: cover;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    &:hover{
+      
+      
+      transform: translateY(-5px); /* Desplaza la tarjeta hacia arriba */
+    }
+  }
+
+  &--cards-container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    flex-flow: row-reverse;
+
+    @include smartphone(700px){
+      flex-flow: column-reverse;
+      margin-bottom: 30%;
+
+    }
+
+    &-card{
+      padding: 0 1%;
+      width: 22%;
+      height: max-content;
+      border-radius: 30px;
+      border-bottom: 1px solid #000;
+      background: #e0e0e0;
+      box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      @include smartphone(700px){
+        width: 85%;
+        margin: auto;
+        padding: 0px 7%;
+      }
+
+      &:hover{
+        background: #f4f4f4; /* Cambia el fondo al pasar el ratón */
+        box-shadow: 20px 20px 40px #bebebe, /* Mayor sombra */
+                    -20px -20px 40px #ffffff; /* Aumenta la sombra en el hover */
+        transform: translateY(-5px); /* Desplaza la tarjeta hacia arriba */
+      }
+      &-title{
+        font-size: 18px;
+        background: url('../../../assets/images/ruidoBlack.webp');
+        background-size: cover;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin: 18px auto 8;
+      }
+      &-company{
+        color: dimgray;
+        font-size: 12px;
+        font-family: Lato;
+        margin: 0;
+
+      }
+      &-duration{
+        color: dimgray;
+        font-size: 11px;
+        font-family: Lato;
+        margin: 0;
+      }
+      &-description{
+        font-size: 16px;
+        font-family: 'Lato', sans-serif;
+        font-weight: lighter;
+        text-align: justify;
+        margin: 8px auto 5%;
+        margin-bottom: 5%;
+      }
+    }
+  }
+
+}
+
+.project{
+
+  &-container{
+      background: #fff;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 84%;
+      min-height: 96vh;
+      height: 96vh;
+      margin: auto;
+      border: 2vh solid #000;
+      @include smartphone(700px){
+        width: 94%;
+      }
+
+
+      &-btn {
+          height: 9%;
+          width: 97%;
+          margin: 1% auto;
+          background: #000;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          
+          @include smartphone(700px){
+            height: 19%;
+          }
+
+          &-text{
+              color: #fff;
+              font-size: 2rem;
+              transition: all 0.3s ease-in-out;
+              animation: heartbeat 2s infinite;
+
+              @include smartphone(700px){
+                font-size: 1rem;          
+                margin-top: -4%;      
+              }
+          }
+      }
+  }
+}
+
+.plyr.plyr--full-ui.plyr--video.plyr--html5.plyr--fullscreen-enabled.plyr--paused.plyr--stopped.plyr--pip-supported.plyr--is-touch{
+  @include smartphone(700px){
+    height: 90% !important;
+  }
+}
+
+.plyr{
+  min-height: 87%;
+  
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); } // Se agranda un poco
+  100% { transform: scale(1); } // Vuelve a su tamaño normal
+}

@@ -1,0 +1,195 @@
+
+$primary-color: #000000; // Black background
+$secondary-color: #1a1a1a; // Dark gray for contrast
+$text-color: #ffffff; // White text for readability
+$icon-color: #8e44ad; // Purple icons
+$shadow-color: rgba(255, 255, 255, 0.1);
+
+.info {
+    background: $primary-color;
+    padding: 40px;
+    padding-top: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px $shadow-color;
+    color: $text-color;
+    margin: auto;
+    max-height: 93vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &--title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+
+        i {
+            color: $icon-color;
+            margin-right: 10px;
+        }
+    }
+
+    &--content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px; // Adds space between sections
+
+        &-section {
+            flex: 1;
+            min-width: 45%;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+
+            &-title {
+                font-size: 22px;
+                margin-bottom: 15px;
+                color: $icon-color;
+
+                i {
+                    margin-right: 8px;
+                }
+            }
+
+            &-skill {
+                &-list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+
+                &-item {
+                    background: $secondary-color;
+                    padding: 12px 15px;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    box-shadow: 0 2px 5px $shadow-color;
+                    line-height: 1.5;
+                    word-spacing: 2px;
+
+                    i {
+                        color: $icon-color;
+                        margin-right: 12px;
+                        font-size: 20px;
+                        flex-shrink: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                        color: $text-color;
+                    }
+
+                    strong {
+                        color: $text-color;
+                        margin-left: 5px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.close{
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .project-description {
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+
+        .section {
+            min-width: 100%;
+        }
+    }
+}
+
+.Lato{
+    font-family: 'Lato', sans-serif;
+}
+
+.info--description {
+    background: $primary-color;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px $shadow-color;
+    color: $text-color;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+
+    h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: $icon-color;
+       
+        
+
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 15px;
+       
+        strong {
+            color: $icon-color;
+            text-decoration: underline;
+        }
+        
+        i {
+            margin-left: 10px;
+            color: $icon-color;
+        }
+    }
+
+    div {
+        margin-top: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+        display: flex;
+        color: $text-color;
+
+        i {
+            margin-right: 8px;
+            color: $icon-color;
+        }
+    }
+
+    // Responsive Design
+    @media (max-width: 768px) {
+        padding: 15px;
+        
+        h3 {
+            font-size: 20px;
+        }
+        
+        p {
+            font-size: 14px;
+        }
+        
+        h2 {
+            font-size: 16px;
+        }
+    }
+}
